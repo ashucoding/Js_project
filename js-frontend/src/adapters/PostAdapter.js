@@ -5,7 +5,7 @@ class PostAdapter {
     }
 
     getPosts() {
-        return fetch(this.baseUrl).then(res => res.json());
+        return fetch(this.baseUrl).then(res => res.json()); // return all the posts from the db
     }
 
     createPost(value) {

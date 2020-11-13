@@ -1,4 +1,4 @@
-class Api::v1::CommentsController < ApplicationController
+class Api::V1::CommentsController < ApplicationController
     def index
         @comments = Comment.all
 
@@ -33,8 +33,6 @@ class Api::v1::CommentsController < ApplicationController
     private
 
     def comment_params
-        params.require(:comment).permit(:body)
+        params.require(:comment).permit(:body, :post_id)
     end
-end
-
 end

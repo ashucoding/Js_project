@@ -3,7 +3,7 @@ class Posts {
         this.posts = [];
         this.adapter = new PostAdapter();
         this.initBindingsAndEventListeners()
-        this.fetchAndLoadPosts();
+        this.fetchAndLoadPosts(); // fill this.posts with posts from the database
     }
 
     initBindingsAndEventListeners() {
@@ -39,23 +39,28 @@ class Posts {
     fetchAndLoadPosts() {
         this.adapter
             .getPosts()
-            .then(posts => {
+            .then(posts => { // [{post 1 info}, {post 2 info}, {},...]
                 posts.forEach(post => this.posts.push(new Post(post)));
             })
             .then(() => {
                 this.render();
             })
+
     }
 
+    // Display the posts that are in this.posts in the HTML
     render() {
         this.postsList.innerHTML = "" // clear list
 
-        this.posts.forEach(post => {
-            let liElem = post.renderLi();
-            liElem.onclick = (e) => {
+        this.posts.forEach(post => { // loop through this.posts and renders each to the page
+            let postElem = post.render(); // <div> ... </div>
+
+            // Add event listener to delete button 
+            postElem.querySelector("#deleteButton").onclick = (e) => {
                 this.deletePost(post.id);
-            }
-            this.postsList.appendChild(liElem);
+            };
+
+            this.postsList.appendChild(postElem); // Adds the div to the html
         });
     }
 }

@@ -1,0 +1,220 @@
+@import url(../css/fonts.css);
+html,
+body {
+    margin: 0%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+:root {
+    --text-teal: #095A8A;
+    --text-light: #60ADBD;
+    --text-accent: #FAAF69;
+    --text-dkaccent: #2D514F;
+    --text-ltaccent: #9AB4DC;
+    --sky: linear-gradient(to top, #bdc2e8 0%, #bdc2e8 1%, #e6dee9 100%);
+    --Abel: 'Abel', cursive;
+    --Anton: 'Anton', cursive;
+    --Josefin: 'Josefin', cursive;
+    --Lexend: 'Lexend', cursive;
+    --Livvic: 'Livvic', cursive;
+}
+
+
+/*-------- Global Classes-------------*/
+
+a {
+    text-decoration: none;
+    color: var(--text-teal);
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: #095A8A;
+}
+
+ul {
+    list-style-type: none;
+}
+
+h1 {
+    font-family: cursive, var(--Abel);
+    font-size: 5rem;
+}
+
+h2 {
+    font-family: var(--Abel);
+}
+
+h3 {
+    font-family: cursive, var(--Abel);
+    font-size: 2rem;
+}
+
+button.btn {
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    font-family: var(--Livvic);
+    cursor: pointer;
+}
+
+
+/*-------- Global Classes-------------*/
+
+
+/*-------navbar------------*/
+
+.nav {
+    background: white;
+    padding: 0 2rem;
+    height: 0rem;
+    min-height: 10vh;
+    overflow: hidden;
+    transition: height 1s ease-in-out;
+}
+
+.nav .nav-menu {
+    justify-content: space-between;
+}
+
+.nav .toggle-collapse {
+    position: absolute;
+    top: 0%;
+    width: 90%;
+    cursor: pointer;
+    display: none;
+}
+
+.nav .toggle-collapse .toggle-icons {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1.7rem 0;
+}
+
+.nav .toggle-collapse .toggle-icons i {
+    font-size: 1.4rem;
+    color: var(--text-teal);
+}
+
+.collapse {
+    height: 30rem;
+}
+
+.nav .nav-items {
+    display: flex;
+    margin: 0;
+}
+
+.nav .nav-items .nav-link {
+    padding: 1.6rem 1rem;
+    font-size: 1.1rem;
+    position: relative;
+    font-family: var(--Abel);
+    ` font-size: 1.1rem;
+}
+
+.nav .nav-items .nav-link:hover {
+    background-color: var(--text-accent);
+}
+
+.nav .nav-brand a {
+    font-size: 1.6rem;
+    padding: 1rem 0;
+    display: block;
+    font-family: var(--Lexend);
+    font-size: 1.6rem;
+}
+
+.nav .social {
+    padding: 1.4rem 0;
+}
+
+.nav .social i {
+    padding: 0 .2rem;
+}
+
+.nav .social i:hover {
+    color: #60ADBD;
+}
+
+
+/*-------navbar------------*/
+
+
+/*-------Main Page------------*/
+
+main {
+    background: url('../../travel.gif');
+    background-size: cover;
+    height: 110vh;
+    display: flex;
+    justify-content: center;
+    opacity: 90%;
+}
+
+main .site-title .site-background {
+    padding-top: 8rem;
+    text-align: center;
+    font-size: 3rem;
+    color: #000f10;
+    font-family: cursive, var(--Abel);
+}
+
+main .site-title {
+    margin: 3rem;
+}
+
+main .btn {
+    margin: 1.8rem;
+    background: #2D514F;
+}
+
+main .btn:hover {
+    background: transparent;
+    border: 1px solid var(--text-dkaccent);
+    color: var(--white);
+}
+
+
+/* main .blog {
+    padding-top: 6rem;
+} */
+
+main .blog {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 80%;
+    margin: 3rem 2rem;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+main .blog {
+    padding: 10rem 7rem;
+    margin: 5rem;
+}
+
+main .blog {
+    display: block;
+}
+
+#posts-list {
+    text-align: left;
+}
+
+*/
+/*-------Main Page------------*/
+
+@media only screen and (max-width: 750px) {
+    .nav .nav-menu,
+    .nav .nav-items {
+        flex-direction: column;
+    }
+    .nav .toggle-collapse {
+        display: initial;
+    }
+}

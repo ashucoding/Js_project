@@ -12,10 +12,10 @@ class Api::V1::PostsController < ApplicationController
 
     def create
         @post = Post.create(post_params)
-        @post.comments.create!(body: "This is the first comment!")
         
         render json: @post.as_json(include: :comments), status: 200
     end
+
 
     def update
         @post = Post.find(params[:id])
